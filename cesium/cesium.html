@@ -1,0 +1,50 @@
+<html>
+
+	<head>
+		<title>Cesium</title>
+		<script type="text/javascript" src="js/cesium/Apps/Sandcastle/Sandcastle-header.js"></script>
+		<script type="text/javascript" src="js/cesium/Build/CesiumUnminified/Cesium.js" ></script>
+		<script src="https://cesium.com/downloads/cesiumjs/releases/1.63.1/Build/Cesium/Cesium.js"></script>
+    	<link href="https://cesium.com/downloads/cesiumjs/releases/1.63.1/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+	</head>
+
+	<style>
+		@import url(js/cesium/Apps/Sandcastle/templates/bucket.css);
+	</style>
+	
+	<div id="cesiumContainer" class="fullSize"></div>
+	<div id="loadingOverlay"><h1>Loading...</h1></div>
+	<div id="toolbar"></div>
+	
+
+	<script id="cesium_sandcastle_script">
+	
+		Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyYTEyNzdmZS02ODM2LTQ4MGMtOTk3MS00ZDUwMDkzODNiNjMiLCJpZCI6MTc3NzcsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NzI4MTcyNjd9.5qOZVp19Hs6x6QgLmWz4k2hL09yXzVW2ALlSRP2b6wQ'		
+		var viewer = new Cesium.Viewer('cesiumContainer');
+		
+		
+		
+		viewer.dataSources.add(Cesium.GeoJsonDataSource.load('js/cesium/visitedCountries/Morocco.json', {
+			stroke: Cesium.Color.YELLOW,
+			fill: Cesium.Color.RED.withAlpha(0.5),
+			strokeWidth: 3
+		}));
+		
+		
+		
+		viewer.dataSources.add(Cesium.GeoJsonDataSource.load('js/cesium/visitedCountries/France.json', {
+			stroke: Cesium.Color.PURPLE,
+			fill: Cesium.Color.YELLOW.withAlpha(0.5),
+			strokeWidth: 3
+		}));
+		
+		
+	
+
+
+		
+		
+	</script>
+	
+	
+</html>
